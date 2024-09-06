@@ -1,0 +1,10 @@
+{:paths ["scripts/ch02"]
+ :tasks {test:bb {:extra-paths ["tests/ch02"]
+                  :extra-deps {io.github.cognitect-labs/test-runner
+                               {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+                  :task (exec 'cognitect.test-runner.api/test)
+                  :exec-args {:dirs ["tests/ch02"]}
+                  :org.babashka/cli {:coerce {:nses [:symbol]
+                                              :vars [:symbol]}}}}}
+
+:deps {babashka/babashka {:mvn/version "1.0.168"}}
